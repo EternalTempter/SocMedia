@@ -1,8 +1,8 @@
 
 <template>
     <div>
-        <div class="messageBox" v-for="message in messages">
-            <div class="message">
+        <div class="messageBox">
+            <div class="message" v-for="message in messages">
                 <div class="userPhoto"></div>
                 <div class="userInfo">
                     <div class="dateSend placeholder-item"> {{ message.sendDate }} </div>
