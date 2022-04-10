@@ -1,3 +1,23 @@
+<script>
+    export default{
+        data(){
+            return {
+                likes: 100,
+                dislikes: 100,
+            }
+        },
+        methods: {  
+            addLike(){
+                this.likes++;
+            },
+            addDislike(){
+                this.dislikes++;
+            }
+        }
+    }
+</script>
+
+
 <template>
     <div class="newsFeed">
         <div class="news">
@@ -17,8 +37,8 @@
                 <div class="content"></div>
             </div>
             <div class="newsFeedback">
-                <div class="likes"><a href=""><i class="icon icon-heart"/>123</a></div>
-                <div class="dislikes"><a href=""><i class="icon icon-heart-broken"/>321</a></div>
+                <div class="likes"><a @click="addLike()"><i class="icon icon-heart"/> {{ likes }} </a></div>
+                <div class="dislikes"><a @click="addDislike()"><i class="icon icon-heart-broken"/> {{ dislikes }} </a></div>
                 <div class="comments"><a href=""><i class="icon icon-comment-alt"/>53</a></div>
                 <div class="shared"><a href=""><i class="icon icon-export"/>44</a></div>
             </div>
@@ -40,7 +60,7 @@
                 <div class="content"></div>
             </div>
             <div class="newsFeedback">
-                <div class="likes"><a href=""><i class="icon icon-heart"/>123</a></div>
+                <div class="likes"><a href=""><i class="icon icon-heart"/>123   </a></div>
                 <div class="dislikes"><a href=""><i class="icon icon-heart-broken"/>321</a></div>
                 <div class="comments"><a href=""><i class="icon icon-comment-alt"/>53</a></div>
                 <div class="shared"><a href=""><i class="icon icon-export"/>44</a></div>
@@ -50,6 +70,9 @@
 </template>
 
 <style scoped>
+    a{
+        cursor: pointer;
+    }
     .newsFeed{
         margin: 0 auto;
         width: 50vw;

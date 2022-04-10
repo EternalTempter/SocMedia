@@ -1,31 +1,35 @@
+
 <template>
-    <div class="messageBox">
-        <div class="message">
-            <div class="userPhoto"></div>
-            <div class="userInfo">
-                <div class="dateSend placeholder-item"></div>
-                <div class="lastMessage placeholder-item"></div>
+    <div>
+        <div class="messageBox" v-for="message in messages">
+            <div class="message">
+                <div class="userPhoto"></div>
+                <div class="userInfo">
+                    <div class="dateSend placeholder-item"> {{ message.sendDate }} </div>
+                    <div class="lastMessage placeholder-item"> {{ message.lastMessage }} </div>
+                </div>
+                <div class="readIndicator"></div>
             </div>
-            <div class="readIndicator"></div>
-        </div>
-        <div class="message">
-            <div class="userPhoto"></div>
-            <div class="userInfo">
-                <div class="dateSend placeholder-item"></div>
-                <div class="lastMessage placeholder-item"></div>
-            </div>
-            <div class="readIndicator"></div>
-        </div>
-        <div class="message">
-            <div class="userPhoto"></div>
-            <div class="userInfo">
-                <div class="dateSend placeholder-item"></div>
-                <div class="lastMessage placeholder-item"></div>
-            </div>
-            <div class="readIndicator"></div>
         </div>
     </div>
 </template>
+
+<script>
+    export default {
+        data() {
+            return {
+                messages: [
+                    {id: 1, friendName: 'Анатолий', lastMessage: '43', sendDate: '10:24'},
+                    {id: 2, friendName: 'Андрей', lastMessage: '2134', sendDate: '15:59'},
+                    {id: 3, friendName: 'Алексей', lastMessage: '1124', sendDate: '01:33'},
+                ]
+            }
+        },
+        methods: {
+
+        }
+    }
+</script>
 
 <style>
     .userPhoto{
